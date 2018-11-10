@@ -87,7 +87,7 @@ def full(color,symbol, text):
 def partial(color,symbol):
   return color + symbol + reset
 
-def custom(text, fcolor, bcolor = default, fmt = default):
+def custom(fcolor, text, bcolor = default, fmt = default):
   f_num = esc_num(fcolor)
   fmt_num = esc_num(fmt)
   b_num = esc_num(bcolor)

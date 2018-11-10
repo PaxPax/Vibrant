@@ -23,7 +23,7 @@ class HBarChart(Chart):
 
   def create_hbar(self, label, value, spacing):
     label_margin = spacing - len(label)
-    return fblue + label + (" " * label_margin) + (self.block * value) + str(value)
+    return forange + label + (" " * label_margin) + (self.block * value) + str(value)
 
   def set_footer(self, y_label):
     print('\033[{0};{1}H{2}'.format(self.row_space,self.title_posx,fdefault + y_label))
