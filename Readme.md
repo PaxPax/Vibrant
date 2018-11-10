@@ -2,7 +2,7 @@
 
 Vibrant was largely inspired by [fab](https://github.com/icyphox/fab). I enjoyed the idea of it being extremely simple and easy to use. While Vibrant is easy to use, it can be made even easier, which is my plan. So, feel free to use the current Vibrant if you wish, but it will be going through some changes to make the experience more enjoyable and extending the functionality. With the increase of functionality, you will always be able to use the core of Vibrant without having to worry about breaking changes.
 
-## SHOWCASE![vibe](/home/emmett/Pictures/vibes.png)
+## SHOWCASE![vibe](./images/vibes.png)
 
 ### Easy Examples
 
@@ -53,11 +53,11 @@ bar_chart.hbar(data, "my y label", "Clever Title")
 
 The data set must always be a dictionary type with whole number values. If the values are **negative** or of **float** they will not be displayed or the program will **crash**. If these rules are followed though you can come out with a neat looking simple graph. Here's an example of the output from our above code.
 
-![vibechart_showcase](/home/emmett/Pictures/vibechart_showcase.png)
+![vibechart_showcase](./images/vibechart_showcase.png)
 
 The ability to change the color of the default graph data isn't supported yet, but it is easy to change it from the source code perspective. In the `vibechart.py`in the `create_hbar` method you can prefix the label with a Text Color to change it from the default. Such as `return forange + label + (" " * label_margin) + (self.block * value) + str(value)` will create the following output.
 
-![orange_vibechart](/home/emmett/Pictures/orange_vibechart.png)
+![orange_vibechart](./images/orange_vibechart.png)
 
 To change the color of the title or label simply prefix the desired color in your arguments list.
 
