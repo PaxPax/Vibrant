@@ -160,3 +160,5 @@ def custom(fcolor, text, bcolor = bdefault, fmt = bdefault):
   fmt_num = esc_num(fmt)
   b_num = esc_num(bcolor)
   return "\033[" + f_num + ";" + fmt_num + ";" + b_num + "m" + text + reset_
+
+print(question("test"))

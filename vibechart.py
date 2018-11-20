@@ -1,5 +1,5 @@
 import os
-from vibrant import *
+from ascii_raw_seq import *
 
 
 class Chart:
