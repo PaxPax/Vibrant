@@ -1,5 +1,5 @@
 import os
-from ascii_raw_seq import *
+from ascii_seq import *
 
 
 class Chart:
@@ -17,13 +17,13 @@ class Chart:
     print('\b')
 
 class HBarChart(Chart):
-  def __init__(self):
+  def __init__(self, color = fdefault):
     super(HBarChart, self).__init__()
-    self.block = '█'
+    self.block = color + '█' + reset_
 
   def create_hbar(self, label, value, spacing):
     label_margin = spacing - len(label)
-    return forange + label + (" " * label_margin) + (self.block * value) + str(value)
+    return  label + (" " * label_margin) + (self.block * value) + str(value)
 
   def set_footer(self, y_label):
     print('\033[{0};{1}H{2}'.format(self.row_space,self.title_posx,fdefault + y_label))
@@ -31,12 +31,12 @@ class HBarChart(Chart):
   def label_difference(self, labels):
     return len(max(labels, key=len))
 
-  def hbar(self, data, y_label, title="PlaceHolder", symbol=None):
+  def hbar(self, data, x_label, title="PlaceHolder", symbol=None):
     """
       @param1 data: dictionary
-      @param2 y_label: y-axis label string
+      @param2 x_label: x-axis label string
       @param2 title: string title of the bar chart
-      @param3 symbol: a any valid unicode/ascii character the default symbol<█>
+      @param3 symbol: a any valid unicode/ascii character the default symbol █
       return: prints a horizontal bar chart
     """
     self.spacing = self.label_difference(data)
@@ -49,4 +49,4 @@ class HBarChart(Chart):
         print('\033[{0};{1}H{2}'.format(self.row_space+1, self.left_margin, bar))
         self.row_space += 2
         print('\b')
-      self.set_footer(y_label)
+      self.set_footer(x_label)

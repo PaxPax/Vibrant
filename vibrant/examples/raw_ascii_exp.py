@@ -1,4 +1,6 @@
-from ascii_seq import *
+import sys
+sys.path.append('../')
+from vibrant import *
 #If you just want the ascii escape sequences and symbols you just have
 #to import from ascii_seq and either pick what you need or import everything
 #In this example we are importing everything but you can do something like
@@ -20,3 +22,19 @@ print("this is the default color of your terminal")
 print(underline_ + forange + "This text will be orange and underline" + reset_)
 #While raq sequences are helpful when you want absolute control over how it looks,
 #most of the time I don't believe it's needed.
+
+#Here's a fun function to print out zebra pattern
+#While it is basic feel free to expand on it
+
+def zebra(text):
+    index = 0
+    new_zebra_text = ""
+    for char in text:
+        if index % 2 == 0:
+            new_zebra_text += bblack + char + bdefault
+        else:
+            new_zebra_text += char
+        index += 1
+    return new_zebra_text
+
+print(zebra("This is some text"))
